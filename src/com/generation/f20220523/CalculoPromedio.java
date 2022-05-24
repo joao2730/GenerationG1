@@ -1,4 +1,4 @@
-package com.generatio.f20220523;
+package com.generation.f20220523;
 
 public class CalculoPromedio {
 
