@@ -1,6 +1,6 @@
 package com.generation.f20220527;
 
-public class Alumno {
+public class AlumnoPrueba {
 
     private String Nombre;
     private String Apellido;
