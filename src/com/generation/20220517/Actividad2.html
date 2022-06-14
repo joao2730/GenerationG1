@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+    <script>
+        /*Escribe una función que entregue la suma de todos los 
+                                                                                        números pares del 1 al 1000 - Puedes usar un operador de 
+                                                                                        módulo para este ejercicio.*/
+
+        /*5 / 2 = 2;
+        1 //resto de la divicion
+        6 / 2 = 3
+        0//si el resto es cero, el numero es par
+
+        if (7 % 2 != 0) { // forma de obtener impar, (7 % 2 == 0) forma de obtener par
+            console.log("Es impar");
+        } else {
+            console.log("Es par");
+        }*/
+
+        function sumaPares(numIni, numFin) {
+
+            if (numIni < numFin) {
+                //variable acumuladora
+                let sumaTotalPares = 0;
+                //variable = variable + "algo";
+
+                //1>2>3>4...>1000
+                for (let i = numIni; i <= numFin; i++) {
+                    //validar si "i" es par
+                    if (i % 2 == 0) {
+                        sumaTotalPares = sumaTotalPares + i;
+                        //sumaTotalPares = 0 + 2; 2
+
+                    }
+
+                }
+                return sumaTotalPares;
+
+            } else {
+                alert("Numero inicio debe ser menos al numero fin");
+            }
+
+        }
+        //console.log(sumaPares(1, 1000)); // imprimir el resultado
+        var sumaTotal = sumaPares(1, 1000);
+        console.log(sumaTotal);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

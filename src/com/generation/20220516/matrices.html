@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrices</title>
+    <script>
+        //Matrices o Array o Arreglos
+        //Conjunto de datos, ordenados segun su ingreso, separados por coma(,)
+        //la primera posicion(o indice) es la cero (0)
+        var matriz = [1, 2, 3, "a", "e", "i", false, true];
+
+        console.log(matriz);
+        console.log(matriz.length); //longitud, tamaño o cantidad de elementos
+
+        //nombreMatriz[indice o posicion], para acceder a un elemento de esta
+        console.log(matriz[3]); //-->imprime a
+        console.log(matriz[6]); //--> imprime false
+        console.log(matriz[0], matriz[2]); //--> imprime 1 y 3 en color
+        console.log(matriz[0] + "  " + matriz[2]); //--> imprime 1 y 3 en negritas
+        console.log(matriz[-1]); //--> imprime undefined, no existe el indice
+
+        /*Si el elemento existe lo reemplaza*/
+        matriz[4] = 5; //sobreescribir o reemplazar el contenido de ese indice
+        console.log(matriz);
+
+        /*Si no agrega espacios vacios hasta llegar a la posicion del indice*/
+        matriz[12] = "o";
+        console.log(matriz);
+        console.log(matriz.length); //longitud, tamaño o cantidad de elementos ->13
+
+        //matriz.length -1, acceder al ultimo elemento
+        console.log(matriz[matriz.length - 1]);
+
+        console.clear(); // Limpiar consola
+        //matriz vacia
+        var numeros = [];
+        //agregar elementos a la matriz
+        numeros[0] = 2;
+        numeros.push(4);
+        numeros.push(6);
+        numeros[7] = 16;
+        numeros.push(8);
+        console.log(numeros);
+
+        /*eliminar el ultimo elemento sin parametros
+        numeros.pop();
+        numeros.pop();
+        numeros.pop();
+        console.log(numeros);*/
+
+        var ultimo = numeros.pop();
+
+        var numerosEliminados = [];
+        numerosEliminados.push(ultimo);
+        console.log(numerosEliminados)
+
+        /*como comparar si esta empty*/
+        if (numeros[3] == 8) {
+            console.log("True");
+        } else {
+            console.log("false");
+        }
+
+
+        //agrega un elemento a la posicion cero
+        numeros.unshift(12);
+        console.log(numeros);
+        //eliminamos el elmento en la posicion cero, NO requiere valor
+        numeros.shift();
+        console.log(numeros);
+
+        numeros.push(4)
+
+        //retorna la posicion del elemento que encuentre
+        var posicion = numeros.indexOf(5)
+            //si no lo encuentra lo retorna el -1
+
+        console.log("posicion del 4 en el arreglo es", posicion);
+
+        //splice (posicion,cantidad) elementos a eliminar
+        numeros.splice(3, 4); //a partir de esta posicion me elimina 2
+        console.log(numeros);
+
+        //crear una matriz a partir de otra matriz
+        var nuevaMatriz = numeros.slice(); // sin parametros
+        //var nuevaMatriz = numeros;//de esta manera se modifica la matriz original no crea una nueva
+
+        //FOR recorrer una matriz
+        //nuevaMatriz = [2, 4, 6, 4] posicion 3
+
+        for (var index = 0; index < nuevaMatriz.length; index++) {
+
+        }
+
+        //index++; index+ = 1; index = index + 1;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

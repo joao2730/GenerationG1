@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20220516 - Funciones</title>
+    <script>
+        /*Funciones*/ //objetivo de una funcion es reutilizar codigos
+        function suma(numero1, numero2) {
+            //numero1 = 2; numero2 = 5;
+
+            if (numero1 != 4 && numero2 != 5) { //condicional//== es comprobacion//&& ampersand es inclusivo
+                console.log("numero1 es distinto a 4 y numero2 es distinto a 5"); //!= distinto
+            } else {
+                console.log("alguna de las condiciones no se cumplen");
+                console.log("el numero1 es igual a 4 o el numero2 es igual a 5");
+            }
+            if (numero1 == 4 || numero2 != 5) {
+                console.log("alguna de las condiciones no se cumplen");
+                console.log("el numero1 es igual a 4 y el numero2 es igual a 5")
+            } else {
+                console.log("numero1 es distinto de 4 y numero2 es distinto de 5")
+            }
+        }
+
+
+        //llamado a la funcion a traves de su nombre
+        suma(2, 5); //si la funcion no es llamada no hace nada
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

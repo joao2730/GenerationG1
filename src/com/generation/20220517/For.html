@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20220517 - FOR</title>
+    <script>
+        //FOR
+        var numerosPares = [0, 2, 4, 6, 8, 10, 12]
+            //numerosPares.length = 7 //cantidad de elementos
+            //numeroPares[0] //posicion del elemento variable y corchetes
+
+        /* paso 1 establecer la condicion de la variable
+        paso 2 estabecer la condicion de acceso
+        paso 3 acceder al for si la condicion fue verdadera
+        paso 4 una vez que finaliza, aumenta el indice y vualve a comenzar*/
+        //2 < 7
+        for (var i = 0; i < numerosPares.length; i++) { //i=2
+
+            console.log(numerosPares[i]);
+            //console.log(numerosPares[2]);
+            console.log("resultado")
+        }
+        for (var o = 1; o <= 10; o++) {
+            console.log("2 x", o, "=", o * 2);
+        }
+
+        //resp.: 0,2,4,6,8,10,12
+        console.log("fuera del for");
+        console.clear();
+
+        /*Para la function "uno", el parametro (b) es irrelevante
+        Al final de la ejecucion esta funcion nos retorna el
+        valor final de [i] que en este caso es 10
+        El for nos imprime los números del 0 al 9
+        Cuando i toma el valor de 10, no se realiza otra iteracion de For
+        Pero la i mantiene su valor dentro del bloque
+        Return i en este caso seria 10
+        Cuando hacemos la llamada uno(3) la fucion nos retorna el numero 10, independiente del parametro 3*/
+        function uno(b) { //b = 3
+            for (var i = 0; i < 10; i++) {
+                console.log("F1", i);
+            }
+            console.log("valor de i", i);
+            return i;
+            //no se ejecuta nada posterior a return
+        } //el valor de retorno, vuelve donde fue llamada la funcion
+        console.log("Consola1", uno(3)); //console.log(10); 10
+
+        /*
+        En esta funcion llamada dos, tenemos un ciclo iterativo
+        for, el cual ademas del incremental declarado en la sentencia
+        se le suma i + 2, por cada iteracion.
+        Esto quiere decir que se mantiene el valor de [i] y aumenta en dos,
+        lo que nos lleva a iterar solo 4 veces, ya que sale del ciclo al llegar a 11
+        */
+        //2
+        function dos() {
+            for (var i = 0; i < 10; i++) {
+                i = i + 2;
+                console.log("for dos", i);
+            }
+        }
+        dos(); //llamado a la funcion
+
+        //3
+        function tres(b, c) { // b = 0, c = 10
+            //for (var i = 0; i < 10; i++)
+            for (var i = b; i < c; i++) {
+                console.log("for tres", i);
+            }
+            return b * c; //return 0*10; return (0)
+        }
+        tres(0, 10); //No se hace nada con el retorno
+        console.log(tres(0, 10)); //llama a la funcion y lo que retorne lo imprime, console.log(0)
+        console.clear();
+
+        //Escribe una función que devuelve una matriz con todos los números del 1 al 255
+        function matriz() {
+            for (var b = 0; b <= 255; b++) {
+                console.log("resultado", b);
+            }
+            return b;
+
+        }
+
+        /*Escribe una función que entregue la suma de todos los 
+        números pares del 1 al 1000 - Puedes usar un operador de 
+        módulo para este ejercicio.*/
+
+        5 / 2 = 2;
+        1 //resto de la divicion
+        6 / 2 = 3
+        0 //si el resto es cero, el numero es par
+
+        if (7 % 2 != 0) { // forma de obtener impar, (7 % 2 == 0) forma de obtener par
+            console.log("Es impar");
+        } else {
+            console.log("Es par");
+        }
+
+        function sumaPares(numIni, numFin) {
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

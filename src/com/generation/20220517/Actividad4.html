@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+    <script>
+        /*Dado un valor Y, escribe una función que toma un array 
+                y devuelve los valores mayores que Y. 
+                Por ejemplo, si arr = [1,3,5,7] y Y = 3, 
+                tu función devolverá 2 (hay 2 números en el array mayores que 3, esto son 5 y 7). */
+
+        Estamos casi con la solucion, solamente falta determinar como entra el array.
+        podriamos poner un
+        for para que vaya creando un array, y despues el otro
+        para comparar
+
+            *
+            /
+            //Nombre de la funcion, y parametro en este caso array
+        function mayorQueY(array) {
+
+            //variable y arreglo con valores mayores
+            let y = prompt("Ingresa un número");
+            let arregloAux = [];
+
+            //Ciclo, iterando sobre cada numero
+            for (let i = 0; i < array.length; i++) {
+                if (y < array[i]) {
+
+                    // Añadimos elemento que pasa la validación al nuevo arreglo, 
+                    //en este caso, todos los elementos de "array" mayores a Y.
+                    arregloAux.push(array[i]);
+                }
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
