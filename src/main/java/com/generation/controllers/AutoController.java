@@ -17,7 +17,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/auto")
 public class AutoController {// http://localhost:8080/auto
-    @Autowired //insercion de dependencias
+    @Autowired //inyeccion de dependencias
     AutoService autoService;
 
     @RequestMapping("")
