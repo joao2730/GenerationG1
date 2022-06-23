@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 @Table(name="usuarios")
@@ -23,8 +24,21 @@ public class Usuario {
     @Size(min=6, max=8)
     private String password;
 
+    @Column(updatable = false)//esta columna especifica nunca se va poder actualizar
+    private Date createdAt;//se guarda la fecha en que fue insertada en la base de datos
+
+    private Date updatedAt;//se guarda la fecha en que se actualizo
+
+    //OneToOne
+    @OneToOne(mappedBy ="usuario",cascade =CascadeType.ALL,fetch = FetchType.LAZY)
+    private Licencia licencia;
+
     //constructores
     public Usuario() {
+    }
+
+    public Usuario(Long id) {
+        this.id = id;
     }
 
     public Usuario(String nombre, String apellido, Integer edad, String password) {
@@ -70,5 +84,27 @@ public class Usuario {
     public void setEdad(Integer edad) {
         this.edad = edad;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Licencia getLicencia() {
+        return licencia;
+    }
+
+    public void setLicencia(Licencia liccencia) {
+        this.licencia = liccencia;
+    }
+
+    @PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
+
 
 }

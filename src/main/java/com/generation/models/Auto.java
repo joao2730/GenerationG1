@@ -3,6 +3,7 @@ package com.generation.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 @Table(name="autos")
@@ -18,6 +19,11 @@ public class Auto {
     @NotNull
     @Size(min=6, max=6)
     private String patente;
+
+    @Column(updatable = false)//esta columna especifica nunca se va poder actualizar
+    private Date createdAt;//se guarda la fecha en que fue insertada en la base de datos
+
+    private Date updatedAt;//se guarda la fecha en que se actualizo
 
     //Constructores
     public Auto() {
@@ -71,4 +77,14 @@ public class Auto {
     public void setPatente(String patente) {
         this.patente = patente;
     }
+
+    @PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
+
 }

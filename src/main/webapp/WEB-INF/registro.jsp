@@ -19,7 +19,7 @@
           <c:if test="${msgError != null}">
               <c:out value="${msgError}"></c:out>
           </c:if>
-          <%--@elvariable id="usuario" type=""--%>
+          <%--@elvariable id="usuario" type="Usuario"--%>
           <form:label action="/registro/usuario" method="post" modelAttribute="usuario" path="">
           <form:label path="nombre">Nombre:</form:label>
           <form:input path="nombre"/>
