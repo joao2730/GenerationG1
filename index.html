@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos HTML</title>
+</head>
+
+<body>
+    <!-- Headings -->
+    <h1>Titulo h1</h1>
+    <h2>Titulo h2</h2>
+    <h3>Titulo h3</h3>
+    <h4>Titulo h4</h4>
+    <h5>Titulo h5</h5>
+    <h6>Titulo h6</h6>
+    <!-- Salto de linea -->
+    <br>
+    <!-- Linea Horizontal -->
+    <hr>
+    <!-- Parrafos para trabajar con textos -->
+    <!-- El texto se adapta al tamaño de la pagina -->
+    <p>
+        <b>Explore</b> <i>los más de 100 productos</i> <u> y comience a crear en AWS con la capa gratuita.</u> Hay tres tipos diferentes de ofertas gratuitas disponibles según el producto utilizado. Haga clic en el icono de abajo para explorar nuestras
+        ofertas.
+    </p>
+    <!-- <b>(negrita), <i>(letra itali), <u>(subrayado)-->
+    <p><b><i><u>Joao Arando Ortega</u></i></b></p>
+    <br>
+    <hr>
+    <!-- Imagenes-->
+    <!-- src = sources, alt = alternativo o sustituto(actua solo cuando la imagen no es encontrada)-->
+    <img src="imagen.png" alt="img1">
+    <img src="assets/img/BA2.jpg" alt="img1" width="356" height="256">
+    <!-- Al agregar solo width o heigth la imagen mantiene la proporcion-->
+    <img src="assets/img/53J.png" alt="img1" width="256">
+    <br>
+    <hr>
+    <!-- Link o hipervinculos (si se presiona en ese boton te envia hacia el link que has pegado)-->
+    <a href="https://www.generation.org">Visitar Generation</a>
+    <br>
+    <br>
+    <!-- url valor absoluto, redirige a otra pagina web -->
+    <!-- target="_blank" abre otra pagina en otra pestaña -->
+    <a href="https://www.lun.com" target="_blank">Acceder a lun.com</a>
+    <br>
+    <br>
+    <!-- url valor relativo, redirige dentro de la misma web -->
+    <a href="pagina2.html">Ir a la pagina 2</a>
+    <br>
+    <br>
+    <!-- url valor de anclaje, movernos dentro de la misma pagina -->
+    <a href="#nombre">Ir a seccion de la pagina</a>
+    <br>
+    <br>
+    <!--Reemplazar el texto por una imagen -->
+    <a href="https://www.lun.com" target="_blank">
+        <img src="assets/img/luncom.jpg" alt="Lun.com" width="50">
+    </a>
+    <br>
+    <hr>
+    <!-- Listas : Ordenadas y las No ordenadas -->
+    <!-- El ol le asigna un numero por defecto para tener un orden -->
+    <ol>
+        <li>Grupo 1</li>
+        <li>Grupo 2</li>
+        <li>Grupo 3</li>
+        <li>Grupo 4</li>
+        <li>Grupo 5</li>
+        <li>Grupo 6</li>
+        <li>Grupo 7
+            <ol>
+                <li>Grupo 7.1</li>
+                <li>Grupo 7.2</li>
+            </ol>
+        </li>
+    </ol>
+    <!-- el ul le asigna solo un punto y a los hijo les asigna un marcador distinto -->
+    <ul>
+        <li>Grupo 1</li>
+        <li>Grupo 2</li>
+        <li>Grupo 3</li>
+        <li>Grupo 4</li>
+        <li>Grupo 5</li>
+        <li>Grupo 6</li>
+        <li>Grupo 7
+            <ul>
+                <li>Grupo 7.1</li>
+                <li>Grupo 7.2</li>
+                <li>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li>Curso b</li>
+                    </ul>
+                </li>
+            </ul>
+    </ul>
+
+    <!--
+    <ul>
+        <c:forEach items="${lista}" var="item">
+            <li>${item}</li>
+        </c:forEach>
+    </ul>-->
+    <br>
+    <hr>
+    <!-- Tablas (siempre van con table de apertura y cierre) -->
+    <table>
+        <!-- <thead>(es lo que va en el titulo de la tabla)  -->
+        <thead>
+            <!-- <tr>(hacemos una fila, se pueden añadir tantos tr como th se quieran) -->
+            <tr>
+                <!-- <th>(representamos las columnas, van en negritas para diferencias entre titulo y columnas) -->
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Joao</td>
+                <td>Aranda</td>
+                <td></td>
+                <td>28</td>
+            </tr>
+            <tr>
+                <td>Mya</td>
+                <td></td>
+                <td>Alvarado</td>
+                <td>6</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+
+</body>
+
+</html>
