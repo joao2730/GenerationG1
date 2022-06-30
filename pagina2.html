@@ -5,12 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina 2</title>
+    <title>Elementos de seleccion</title>
 </head>
 
 <body>
     <h1>Estoy en la pagina 2</h1>
     <a href="index.html">Volver a la pagina principal</a>
+    <br>
+    <br>
+    <!-- Radio Button (son botones de opcion multiple pero solo se puede seleccionar uno a la vez)-->
+    <!-- name deben ser iguales (el name se utiliza para enviar a un dato del back-end)-->
+    <label for="html">HTML</label><input type="radio" name="opcion" id="html" value="html"><br>
+    <input type="radio" name="opcion" id="css" value="css">CSS<br>
+    <input type="radio" name="opcion" id="js" value="js">JavaScript<br>
+    <!-- opcion = html -->
+    <br>
+    <hr>
+    <!-- checkbok (permite seleccionar mas de una opcion y se pueden desseleccionar las opciones)-->
+    <!-- url?opciones=html&opciones2=css&opciones3=js -->
+    <label for="opciones1">HTML</label><input type="checkbox" name="opciones1" id="opciones1" value="html"><br>
+    <input type="checkbox" name="opciones2" id="opciones2" value="css">CSS<br>
+    <input type="checkbox" name="opciones3" id="opciones3" value="js">JavaScript<br>
+    <br>
+    <hr>
+    <!-- Select (Elementos de seleccion, un label con un for delante lo posiciona a un lado de las opciones)-->
+    <label for="lenguajes">Selecciones una opcion</label>
+    <!-- Lenguajes = 1, multiple es para seleccionar mas de una opcion-->
+    <select name="lenguajes" id="lenguajes">
+        <!-- el selected hace referencia a la opcion que aparece por default -->
+        <option value="0"selected>Seleccione un lenguaje</option>
+        <option value="1">Java</option>
+        <option value="2">Python</option>
+        <option value="3">JavaScript</option>
+        <option value="4">C#</option>
+        <option value="5">Ruby</option>
+    </select>
 
 </body>
 

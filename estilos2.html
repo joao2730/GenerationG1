@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos de estilo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        p {
+            /* ancho */
+            width: 200px;
+            /* alto */
+            height: 50px;
+            font-family: 'vivaldi';
+            font-size: 1em;
+            /* separacion entre las lineas de texto */
+            line-height: 1.5;
+            /* 900; de 100 a 900 */
+            font-weight: bold;
+        }
+        
+        div {
+            width: 400px;
+            height: 400px;
+            /* el overflow le agrega la barra de desplazamiento */
+            /* overflow: scroll; */
+            overflow-y: scroll;
+            /* el primero me asigna el color, el segundo me asigna la imagen, el no-repeat es para que no se repíta, center es para que se centre */
+            background: url("assets/img/53J.png") no-repeat center;
+            /* color de fondo de la etiqueta */
+            background-color: antiquewhite;
+            /* tamaño del fondo de la etiqueta */
+            background-size: 50%;
+            /* color a los bordes(sin solid no se ve el color)[rgb""a"->es para la opacidad 1 -> 0] */
+            border: 10px solid rgba(10, 10, 10, 0.6);
+            /* le damos color al borde superior */
+            border-top-color: green;
+            /* le da color al borde inferior */
+            border-bottom-color: red;
+            border-radius: 10px;
+        }
+        /* hexadeximal 16: 0123456789ABCDEF 
+        #12 34 56 ROJO VERDE AZUL
+        RGB(0,0,0)o(255,255,0)*/
+        
+        a {
+            /* le quita la linea al link de prueba <a href="">*/
+            text-decoration: none;
+        }
+        
+        h1 {
+            /* centra el texto */
+            text-align: center;
+        }
+        /* posicion: static, relative, fixed, absolute, st.. */
+        
+        .estatico {
+            width: 500px;
+            height: 20px;
+            /* posicion original */
+            position: static;
+        }
+        
+        .relativo {
+            width: 500px;
+            height: 20px;
+            /* top, rigth, bottom, left */
+            left: 50px;
+            /* posicion original */
+            position: relative;
+        }
+        
+        .fijo {
+            width: 500px;
+            height: 20px;
+            right: 50px;
+            top: 0px;
+            /* posicion original */
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Elementos de CSS</h1>
+        <a href="#">Link de prueba</a>
+        <p>parrafo 1</p>
+    </div>
+    <div class="estatico">
+        <p>este es un texto con posicionamiento static</p>
+    </div>
+    <div class="relativo">
+        <p>este es un texto con posicionamiento static</p>
+    </div>
+    <div class="fijo">
+        <p>este es un texto con posicionamiento static</p>
+    </div>
+</body>
+
+</html>

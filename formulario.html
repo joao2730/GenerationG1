@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+</head>
+
+<body>
+    <h1>Formulario de envio</h1>
+    <!-- action-> ruta o url -->
+    <form action="" method="post">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido">
+        <br>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Ingresa tu correo">
+        <br>
+        <!-- Al poner el tipo password lo que escribes no se ve (required es para condicionar llenar este campo)-->
+        <label for="pass">Password</label>
+        <input type="password" id="pass" name="pass" placeholder="Ingresa tu contraseña" required>
+        <br>
+        <!-- Es para poner la fecha(con min y max se puede establecer un rango) -->
+        <label for="fecha">Cumpleaños</label>
+        <input type="date" id="fecha" name="fecha" min="1980-01-01" max="2050-01-01">
+        <br>
+        <!-- Da la opcion de poner la hora ademas de la fecha -->
+        <label for="fecha2">Datetime-local</label>
+        <input type="datetime-local" id="fecha2" name="fecha2">
+        <br>
+        <!-- elemento oculto visualmente -->
+        <input type="hidden" id="id" name="id" value="77">
+        <br>
+        <!-- Area de texto (maxlength para dar un maximo de palabras, minlenght muestra un mensaje si intentas enviar sin el minimo de palabras)-->
+        <textarea name="textarea" id="textarea" placeholder="Ingresa una observacion" cols="30" rows="10" maxlength="20" minlength="5"></textarea>
+        <br>
+
+        <!-- tipos de pobotones para enviar datos -->
+        <input type="submit" value="Enviar">
+        <button type="submit">Enviar</button>
+        <!-- Boton para limpiar el contenido -->
+        <input type="reset" value="Limpiar">
+    </form>
+
+</body>
+
+</html>

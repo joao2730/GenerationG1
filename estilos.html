@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        /* 3 formas basicas de asignar un estilo */
+        /* 1.- Por Elemento HTML, todas las etiquetas se ven afectadas */
+        
+        div {
+            background-color: burlywood;
+            /* Al darle un tamaño en pixeles queda con un tamaño estatico */
+            /* Si se pone en porcentaje se adapta el tamaño */
+            width: 50%;
+        }
+        /* color solo a la etiqueta parrafo */
+        
+        p {
+            background-color: mediumturquoise;
+            color: aquamarine;
+        }
+        
+        img {
+            /* width: 50%; tambien se pede trabajar con porcentajes y cuando se trabaja con el es el porcentaje del tamaño de la pagina */
+            /* si se pone un tamaño al contenedor div el porcentaje es equivalente al tamaño del contenedor */
+            width: 150px;
+        }
+        /* EM=16px y REM=16px(no es escalable) unidades de medidas */
+        /* 2.- Por clases, se ven afectados, solo aquellas etiquetas que tengan la clase */
+        /* cualquier etiqueta */
+        /* Este es un nombre significativo(cualquier que nosotros le queramos colocar) */
+        
+        .colorWhite {
+            /* el color afecta solo a la etiqueta que contenga class="colorWhite"(tambien se puede heredar el estilo a travez de la clase) */
+            color: white;
+        }
+        /* !important se le asigna un nivel de importancia por sobre el resto */
+        
+        .generation1 {
+            color: brown !important;
+        }
+        /* 3.- Por ID, estilo especifico para la etiqueta o elemento */
+        /* cuando se trabaja con un id se coloca un cardinal(#)[el id siempre es el mas importante] */
+        
+        #importante {
+            color: yellow;
+        }
+        
+        #pg1 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>parrafo 1</p>
+        <!-- class se trabaja solo en la etiqueta de apertura -->
+        <p class="colorWhite">parrafo 2</p>
+        <p class="colorWhite">parrafo 3</p>
+        <p id="importante">parrafo 4</p>
+        <img src="assets/img/53J.png" alt="front">
+    </div>
+</body>
+<!-- Mientras mas cercano al elemento mas importante es la condicion -->
+<!-- El estilo se aplica a todo lo que este dentro del contenedor -->
+<div class="colorWhite">
+    <p>parrafo 5</p>
+</div>
+<p id="pg1" class="generation1">parrafo 6</p>
+
+</html>
