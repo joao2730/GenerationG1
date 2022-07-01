@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="usuarios")
@@ -32,6 +33,16 @@ public class Usuario {
     //OneToOne
     @OneToOne(mappedBy ="usuario",cascade =CascadeType.ALL,fetch = FetchType.LAZY)
     private Licencia licencia;
+
+    //ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
+    @JoinTable(
+            name = "roles_usuarios",//nombre tabla relacional
+            joinColumns = @JoinColumn(name="usuario_id"),//desde la entidad actual
+            inverseJoinColumns = @JoinColumn(name = "rol_id")//la otra entidad o tabla
+            )
+    private List<Rol> roles;
+
 
     //constructores
     public Usuario() {
@@ -93,8 +104,16 @@ public class Usuario {
         return licencia;
     }
 
-    public void setLicencia(Licencia liccencia) {
-        this.licencia = liccencia;
+    public void setLicencia(Licencia licencia) {
+        this.licencia = licencia;
+    }
+
+    public List<Rol> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Rol> roles) {
+        this.roles = roles;
     }
 
     @PrePersist

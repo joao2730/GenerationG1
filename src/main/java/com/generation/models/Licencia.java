@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="licencias")
+@Table(name = "licencias")
 public class Licencia {
 
     @Id
@@ -19,15 +19,16 @@ public class Licencia {
     private String estado;
 
     //opcionales, sirven para la gestion de la base de datos
-   @Column(updatable = false)//esta columna especifica nunca se va poder actualizar
+    @Column(updatable = false)//esta columna especifica nunca se va poder actualizar
     private Date createdAt;//se guarda la fecha en que fue insertada en la base de datos
 
     private Date updatedAt;//se guarda la fecha en que se actualizo
     //private Date deleteAt;//fecha de eliminacion logica (se da de baja no se borra)
 
     //Relaciones OneToOne (1a1)
-    @OneToOne(fetch = FetchType.LAZY)// Eager carga los datos automaticante y el Lazy caraga los datos cuando yo la quiera consumir(a peticion)
-    @JoinColumn(name="usuario_id")//FK de la otra identidad
+    @OneToOne(fetch = FetchType.LAZY)
+    // Eager carga los datos automaticante y el Lazy caraga los datos cuando yo la quiera consumir(a peticion)
+    @JoinColumn(name = "usuario_id")//FK de la otra identidad
     private Usuario usuario;
 
     //Constructor vacio
@@ -94,11 +95,12 @@ public class Licencia {
 
     //insertara en el atributo la fecha antes de insertar a base de datos
     @PrePersist
-    protected void onCreate(){
+    protected void onCreate() {
         this.createdAt = new Date();
     }
+
     @PreUpdate
-    protected void onUpdate(){
+    protected void onUpdate() {
         this.updatedAt = new Date();
     }
 

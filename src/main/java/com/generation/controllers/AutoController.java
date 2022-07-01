@@ -3,13 +3,11 @@ package com.generation.controllers;
 import com.generation.models.Auto;
 import com.generation.services.AutoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -21,14 +19,14 @@ public class AutoController {// http://localhost:8080/auto
     AutoService autoService;
 
     @RequestMapping("")
-    public String inicio(@ModelAttribute("auto") Auto auto){
+    public String inicio(@ModelAttribute("auto") Auto auto) {
 
         return "auto.jsp";
     }
 
     @RequestMapping("/guardar")
     public String guardarAuto(@Valid @ModelAttribute("auto") Auto auto,
-             BindingResult resultado, Model model) {
+                              BindingResult resultado, Model model) {
         //El BindingResult va seguido del valid, este valida lo que esta en el jsp
 
         if (resultado.hasErrors()) {
@@ -58,7 +56,7 @@ public class AutoController {// http://localhost:8080/auto
 
     @RequestMapping("/editar/{id}")//url que mostrara para modificar
     public String editar(@PathVariable("id") Long id, Model model) {
-        System.out.println("el id es: "+id);
+        System.out.println("el id es: " + id);
         Auto auto = autoService.buscarId(id);
         model.addAttribute("auto", auto);//pasar el objeto completo al jsp
 
@@ -69,8 +67,8 @@ public class AutoController {// http://localhost:8080/auto
     //localHost:8080/auto/actualizar/{id} -> //actualizar para la persistencia en la id
     @PostMapping("/actualizar/{id}")//url que mostrara al modificar
     public String actualizarAuto(@PathVariable("id") Long id, @Valid @ModelAttribute("auto") Auto auto,
-                              BindingResult resultado, Model model) {
-        System.out.println("el id al actualizar es: "+ id);
+                                 BindingResult resultado, Model model) {
+        System.out.println("el id al actualizar es: " + id);
 
         if (resultado.hasErrors()) {
             model.addAttribute("msgError", "Datos erroneos");
@@ -90,11 +88,32 @@ public class AutoController {// http://localhost:8080/auto
     }
 
     @RequestMapping("/eliminar/{id}")
-    public String eliminarAuto(@PathVariable("id")Long id){
+    public String eliminarAuto(@PathVariable("id") Long id) {
 
         autoService.eliminarPorId(id);
 
         return "redirect:/auto/mostrar";
+    }
+
+    @PostMapping("/buscar")//Definir la ruta
+    public String buscar(@RequestParam(value = "marca") String marca, Model model) {
+
+        List<Auto> listaAutos = autoService.buscarMarca(marca);
+        model.addAttribute("autosCapturados", listaAutos);
+
+        return "mostrarAuto.jsp";
+    }
+
+    @RequestMapping("/pagina/{numeroPagina}")
+    public String paginarAutos(@PathVariable("numeroPagina") int numeroPagina, Model model) {
+
+        //los iterables siempre comienzan con el indice cero(0)
+        Page<Auto> listaAutos = autoService.paginarAutos(numeroPagina - 1);
+        model.addAttribute("autosCapturados", listaAutos);
+        //TotalPages = totalElementos/ LOTE
+        model.addAttribute("totalPaginas", listaAutos.getTotalPages());//.getTotalPages() regresa la cantidad total de las paginas
+
+        return "autosPaginados.jsp";
     }
 
 

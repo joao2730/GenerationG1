@@ -27,7 +27,7 @@
         <form:label path="numero" class="form-label">Numero:</form:label>
         <form:input path="numero" type="number" class="form-control"/>
         <br>
-        <form:label path="fechaVencimiento" class="form-label" >Fecha de Vencimineto:</form:label>
+        <form:label path="fechaVencimiento" class="form-label">Fecha de Vencimineto:</form:label>
         <form:input path="fechaVencimiento" type="date" min="2018-01-01" max="2030-01-01" class="form-control"/>
         <br>
         <form:label path="clase" class="form-label">Clase:</form:label>
@@ -39,7 +39,7 @@
         <!-- USUARIO OneToOne-->
         <form:select path="usuario" class="form-select">
             <form:option value="0">Seleccione un usuario</form:option>
-            <c:forEach  var="usuario" items="${listaUsuarios}">
+            <c:forEach var="usuario" items="${listaUsuarios}">
                 <c:if test="${usuario.licencia.id == null}">
                     <form:option value="${usuario.id}">${usuario.nombre} ${usuario.apellido} </form:option>
                 </c:if>
@@ -56,6 +56,7 @@
         table {
             counter-reset: contador;
         }
+
         /*Aqui se suma 1 para cada celda */
         counterCell:before {
             content: counter(contador);
@@ -85,13 +86,16 @@
                 <td>${licencia.estado}</td>
                 <td>${licencia.usuario.nombre} ${licencia.usuario.apellido}</td>
                 <td><a class="btn btn-warning" href="/licencia/editar/${licencia.id}" role="button">Editar</a></td>
-                <td><a class="btn btn-danger" href="eliminar/${licencia.id}" role="button">Eliminar</a></td>
+                <td><a class="btn btn-danger" href="/licencia/eliminar/${licencia.id}" role="button">Eliminar</a></td>
             </tr>
         </c:forEach>
-
         </tbody>
     </table>
 </div>
-
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous">
+</script>
 </body>
 </html>

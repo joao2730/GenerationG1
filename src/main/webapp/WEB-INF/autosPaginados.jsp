@@ -33,13 +33,16 @@
 <div class="container">
     <!-- formulario de busqueda -->
     <form action="/auto/buscar" method="post">
-        <%--@declare id="marca"--%><label for="marca">Marca:</label>
+        <%--@declare id="marca"--%>
+        <label for="marca">Marca:</label>
         <input type="text" id="marca" name="marca"><!-- entrada para que el boton filtre-->
         <input type="submit" class="btn btn-primary"><!-- Boton de enviar-->
     </form>
     <br> <!-- Salto de linea -->
-    <a href="/auto">Crear auto</a>
-    <!-- Tabla -->
+    <!-- Paginacion -->
+    <c:forEach var="numeroPagina" begin="1" end="${totalPaginas}">
+       <a href="/auto/pagina/${numeroPagina}">${numeroPagina}</a>
+    </c:forEach>
     <table class="table">
         <thead>
         <tr>
@@ -53,7 +56,7 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="auto" items="${autosCapturados}">
+        <c:forEach var="auto" items="${autosCapturados.content}">
             <tr>
                 <th scope="row">${auto.id}</th>
                 <td>${auto.id}</td>

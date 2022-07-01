@@ -17,10 +17,12 @@ public class UsuarioService {
 
     //obteniendo la lista de usuarios
     public List<Usuario> findAll(){
+        //retornar la lista de usuarios
         return usuarioRepository.findAll();
     }
 
     public void saveUsuario(Usuario usuario) {
+        usuarioRepository.save(usuario);
     }
 
 
