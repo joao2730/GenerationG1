@@ -24,12 +24,82 @@
             width: 40px;
             height: 40px;
             background-color: brown;
+            display: inline-block;
         }
         
         #hijo2 {
             width: 40px;
             height: 40px;
             background-color: darkgoldenrod;
+            display: inline-block;
+        }
+        /* Elementos in line <a><img><label><select><textarea> */
+        /* Elementos block <body><div><form><h1>-<h6> <p> <table> <ul> <ol> <li> */
+        /* No hacerlo: nunca poner elementos de tipo block dentro de un elemento de tipo inline(al reves si) */
+        
+        a {
+            display: block;
+            background-color: silver;
+            text-decoration: none;
+        }
+        
+        p {
+            display: inline-block;
+        }
+        
+        #default1 {
+            width: 50px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+            /*ya es por default*/
+            vertical-align: default;
+        }
+        
+        #default1 {
+            width: 50px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+        }
+        
+        #default2 {
+            width: 50px;
+            height: 200px;
+            background-color: blue;
+            display: inline-block;
+        }
+        
+        #top1 {
+            width: 50px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        #top2 {
+            width: 50px;
+            height: 200px;
+            background-color: blue;
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        #middle1 {
+            width: 50px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        #middle2 {
+            width: 50px;
+            height: 200px;
+            background-color: blue;
+            display: inline-block;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -39,6 +109,39 @@
         <div id="hijo"></div>
         <div id="hijo2"></div>
     </div>
+    <!-- nunca -->
+    <a href="index.php">
+        <h1></h1>
+    </a>
+
+    <!-- block -->
+    <a href="#grupo1">grupo1</a>
+    <a href="#grupo1">grupo2</a>
+    <a href="#grupo1">grupo3</a>
+    <a href="#grupo1">grupo4</a>
+    <a href="#grupo1">grupo5</a>
+    <a href="#grupo1">grupo6</a>
+    <p>lksalhdklasdjsakdjalkfjsdlkfjaslkfjasldkdfjadsf</p>
+    <p>kajsdbfjksbfjsanfasfnsdafnasdjfnaskjdfbasjkfbss</p>
+
+    <!--alineacion vertical por default-->
+    <div>
+        <div id="default1"></div>
+        <div id="default2"></div>
+    </div>
+
+    <!--alineacion vertical superior (Top)-->
+    <div>
+        <div id="top1"></div>
+        <div id="top2"></div>
+    </div>
+
+    <!--alineacion vertical central (Middle)-->
+    <div>
+        <div id="middle1"></div>
+        <div id="middle2"></div>
+    </div>
+
 
 </body>
 
