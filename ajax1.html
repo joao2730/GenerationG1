@@ -6,108 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajax 1</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <script>
         $(document).ready(function() {
-            //elemento, clase, id -> asignar funcionalidad
-            // $('button').evento();
-            $('p').click(function() {
-                console.log($(this).text());
-                $(this).text('Esto es un texto por uso del this');
-            })
 
-            //get y set
-            $('#btn1').click(function() {
-                //obtener los valores del elemento
-                let parrafo1 = $('#p1').text();
-                alert("evento.click" + " " + parrafo1);
-                //set
-                $('#p1').text('Esto es un nuevo mensaje');
-            });
+            //peticion ajax
+            //$.get('url', function(){}, 'json');
+            for (let i = 0; i < 100; i++) {
 
-            //funciones de Efectos
-            //hide()-> ocultar elementos
-            $('#btn2').click(function() {
-                $('#p2').hide();
-            })
+            }
 
-            //show()-> mostrar elemento
-            $('#btn3').click(function() {
-                $('#p2').show();
-            })
 
-            //toggle()-> ocultar o mostrar elementos
-            $('#btn4').click(function() {
-                $('#p2').toggle();
-            })
 
-            //slideDown
-            $('#btn5').click(function() {
-                $('#p3').slideUp('slow');
-            });
 
-            //slideUp
-            $('#btn6').click(function() {
-                $('#p3').slideDown(2000);
-            });
 
-            //slideToggle
-            $('#btn7').click(function() {
-                $('#p3').slideToggle('fast');
-            });
 
-            //fadeIn
-            $('#btn8').click(function() {
-                $('#p4').fadeIn('slow');
-            });
 
-            //fadeOut
-            $('#btn9').click(function() {
-                $('#p4').fadeOut(2000);
-            });
-
-            //fadeToggle
-            $('#btn10').click(function() {
-                $('#p4').fadeToggle('fast');
-            });
-
-            //fin jquery    
+            //fin Query
         });
     </script>
+
+
+
+
 </head>
 
 <body>
-    <!-- para capturar y cambiar un valor -->
-    <h1>Getter y Setter</h1>
-    <p id="p1">Esto es un parrafo 1</p>
-    <button id="btn1">get y set</button>
-    <br>
-    <hr>
-    <!-- Efectos -->
-    <!-- hidde show toggle -->
-    <h1>Hidde - Show - Toggle</h1>
-    <p id="p2">Esto es un parrafo 2</p>
-    <button id="btn2">hide()</button>
-    <button id="btn3">show()</button>
-    <button id="btn4">Toggle()</button>
-    <br>
-    <hr>
-    <!-- slideUp slideDown slideToggle -->
-    <h1>SlideUp - SlideDown - SlideToggle</h1>
-    <button id="btn5">slideUp()</button>
-    <button id="btn6">slideDown()</button>
-    <button id="btn7">slideToggle()</button>
-    <p id="p3">Esto es un parrafo 3</p>
-    <br>
-    <hr>
-    <!-- fadeIn fadeOut fadeToggle -->
-    <h1>FadeIn - FadeOut - FadeToggle</h1>
-    <p id="p4">Esto es un parrafo 4</p>
-    <button id="btn8">fadeIn()</button>
-    <button id="btn9">fadeOut()</button>
-    <button id="btn10">fadeToggle()</button>
-    <br>
-    <hr>
+    <div class="container">
+        <!--
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png" alt="bulbasaur">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/2.png" alt="">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/3.png" alt="">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/4.png" alt="">
+    -->
+    </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+    < /scrip> <
+    script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity = "sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin = "anonymous" > < />
 
-</html>
+    <
+    /html>
