@@ -1,0 +1,12 @@
+body {
+    background-color: royalblue;
+}
+
+.contenedor {
+    background-color: rgb(117, 100, 79);
+    text-align: center;
+}
+
+.listaAutos {
+    background-color: antiquewhite;
+}
