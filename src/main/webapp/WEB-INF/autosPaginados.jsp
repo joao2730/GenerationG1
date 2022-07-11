@@ -39,9 +39,11 @@
         <input type="submit" class="btn btn-primary"><!-- Boton de enviar-->
     </form>
     <br> <!-- Salto de linea -->
+    <a href="/auto">Crear auto</a>
+    <br>
     <!-- Paginacion -->
     <c:forEach var="numeroPagina" begin="1" end="${totalPaginas}">
-       <a href="/auto/pagina/${numeroPagina}">${numeroPagina}</a>
+        <a href="/auto/pagina/${numeroPagina}">${numeroPagina}</a>
     </c:forEach>
     <table class="table">
         <thead>

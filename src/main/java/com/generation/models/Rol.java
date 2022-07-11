@@ -19,8 +19,6 @@ public class Rol {
     @ManyToMany(mappedBy = "roles",fetch = FetchType.LAZY)//mappedBy="roles" hace referencia a roles en el modelo usuario
     private List<Usuario> usuarios;
 
-
-
     @Column(updatable= false)
     private Date createdAt;
     private Date updatedAt;

@@ -21,9 +21,13 @@ public class Usuario {
     @Size(min=3, max=20)
     private String apellido;
     private Integer edad;
+
+    private String email;
     @NotNull
-    @Size(min=6, max=8)
     private String password;
+
+    @Transient //no se crea en la tabla de base de datos
+    private String passwordConfirmacion;
 
     @Column(updatable = false)//esta columna especifica nunca se va poder actualizar
     private Date createdAt;//se guarda la fecha en que fue insertada en la base de datos
@@ -114,6 +118,22 @@ public class Usuario {
 
     public void setRoles(List<Rol> roles) {
         this.roles = roles;
+    }
+
+    public String getPasswordConfirmacion() {
+        return passwordConfirmacion;
+    }
+
+    public void setPasswordConfirmacion(String passwordConfirmacion) {
+        this.passwordConfirmacion = passwordConfirmacion;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @PrePersist

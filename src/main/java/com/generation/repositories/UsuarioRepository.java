@@ -8,6 +8,13 @@ import org.springframework.stereotype.Repository;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> { //JpaRepository<Objeto, Tipo_dato_PK>
     /** las interface solo definen los metodos*/
     /** Querys y usar metodo que se conectan a la base de datos*/
+
+    /**
+     * Validar la existencia del email
+     */
+    static Usuario findByEmail(String email) {
+        return null;
+    }
 }
 
 /** Objeto o Entidad (DTO, BEANS, POJO) Auto, atributos, constructores,
