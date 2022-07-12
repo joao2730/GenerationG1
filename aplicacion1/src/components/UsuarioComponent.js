@@ -41,15 +41,22 @@ const UsuarioComponent = () => {
     /*{ const state = useState(initialUsuarios);
     state[o]=initialUsuarios
     state[1]= funcion que nos permite hacer cambios}*/
+    //Aqui se crea la funcion para el button eliminar y se le asigan la key(id) para saber cual eliminar
     const tarjetaDelete = (usuarioKey) => {
+        //Aqui se crea la funcion para filtrar la key del usuario ingresado para determinar cual se tiene que elimina
         const changeUsuarios = usuarios.filter(u => u.key !== usuarioKey)
+        //Aqui se envia la modificacion de la lista de usuario a traves de changeUsuarios
         setUsuarios(changeUsuarios)
     }
 
+    //Aqui se crea esta funcion en la cual se almacenara la informacion 
     const usuarioAdd = (usuario) => {
+        //Aqui se declara la funcion en la que se almacenara la informacion ingresada
         const adddUsuario = [
-...usuarios, usuario
+            //Aqui se declara que datos quiero que me modifique y cuales no
+            ...usuarios, usuario
         ]
+        //Aqui se envia la informacion de addUsuario
         setUsuarios(adddUsuario)
     }
 
@@ -64,7 +71,7 @@ const UsuarioComponent = () => {
                 </div>
                 <div className='col'>
                     <h1>Formulario</h1>
-                    <FormularioComponent />
+                    <FormularioComponent usuarioAdd={usuarioAdd}/>
                 </div>
             </div>
         </div>);

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+//Aqui se crea la lista inicial a la que añadir datos
 const initialValues = [
     {
         key: '',
@@ -9,26 +10,34 @@ const initialValues = [
         password: ''
     }
 ]
-
-const FormularioComponent = () => {
+//Aqui se crea la funcion para el formulario("se le añade el objeto creado al que enviara la informacion")
+const FormularioComponent = ({usuarioAdd}) => {
+    //Trabajar con una copia de initialValues
     const [values, setValues] = useState(initialValues);
+    //Aqui toma todos los datos a rellenar y se los asigna a values
     const { key, nombre, apellido, edad, password } = values;
     // puede ser e o event
+    //Aqui crea una funcion para modificar los datos values
     const handleInputChange = (e) => {
-        console.log(e.target)
+        //Aqui inicia otra funcion para realizar cambios en el formulario de usuarios
         const changedFormValue = {
             //...values-> es una condicional para que el contenido de values se mantenga
-            ...values, [e.target.name]: e.target.value
+            ...values, [e.target.name]: e.target.value//Aqui toma el event.target.name de cada atributo para añadirle datos
             //key:key
         }
+        //Aqui envia las modificaciones de changedFormValue a la funcion values
         setValues(changedFormValue)
     }
 
+    //Aqui se crea la funcion para la accion al presionar el button
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault();//Esto es para evitar que la pagina se actualize al presionar el button
+        //Aqui se le pasan los datos ingresados de values a usuarioAdd que esta en UsuarioComponet
+        usuarioAdd(values)
     }
     return (
-        <form onSubmit={handleSubmit}>
+        //Aqui se añade la clase onSubmit para poder hacer modificaciones en los datos del formulario al presionar el button que es de tipo submit
+        <form onSubmit={handleSubmit}> 
             <div className='form-group'>
                 <label>ID</label>
                 <input type='text' className='form-control' id='key' placeholder='Key' value={key} name='key' onChange={handleInputChange} />
