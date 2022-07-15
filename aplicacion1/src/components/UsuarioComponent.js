@@ -19,28 +19,34 @@ const initialUsuarios = [
         key: 0,
         nombre: 'Joseph',
         apellido: 'Joestar',
-        edad: '18'
+        edad: '18',
+        password: '1234'
     },
     {
         key: 1,
         nombre: 'Josuske',
         apellido: 'Higashikata',
-        edad: '16'
+        edad: '16',
+        password: '5678'
     },
     {
         key: 2,
         nombre: 'Jonathan',
         apellido: 'Higashikata',
-        edad: '16'
+        edad: '16',
+        password: '9012'
     }
 ]
 
 const UsuarioComponent = () => {
-
+    //Set -> setear- asignar un atruto a la variable
     const [usuarios, setUsuarios] = useState(initialUsuarios);
     /*{ const state = useState(initialUsuarios);
     state[o]=initialUsuarios
     state[1]= funcion que nos permite hacer cambios}*/
+
+    const [usuarioEditado, setUsuarioEditado] = useState(null);
+
     //Aqui se crea la funcion para el button eliminar y se le asigan la key(id) para saber cual eliminar
     const tarjetaDelete = (usuarioKey) => {
         //Aqui se crea la funcion para filtrar la key del usuario ingresado para determinar cual se tiene que elimina
@@ -56,8 +62,13 @@ const UsuarioComponent = () => {
             //Aqui se declara que datos quiero que me modifique y cuales no
             ...usuarios, usuario
         ]
-        //Aqui se envia la informacion de addUsuario
+        //Aqui se envia la informacion de addUsuario(los envia a la panatalla y muestra todos los que estan)
         setUsuarios(adddUsuario)
+    }
+
+    const usuarioEdit = (usuarioEditado) => {
+        const changeUsuarios = usuarios.map(usuario => (usuario.key === usuarioEditado.key ? usuarioEditado : usuario))
+        setUsuarios(changeUsuarios)
     }
 
     return (
@@ -65,13 +76,23 @@ const UsuarioComponent = () => {
             <div className='row'>
                 <div className='col-8'>
                     <h1>Lista</h1>
-                    {
-                        usuarios.map(usuario => <TarjetaComponent key={usuario.key} usuario={usuario} tarjetaDelete={tarjetaDelete} />)
+                    {//el usuarios.map permite mostrar mas de una tarjeta de usuario de una manera dinamica
+                        usuarios.map(usuario =>
+                            <TarjetaComponent
+                                key={usuario.key}
+                                usuario={usuario}
+                                tarjetaDelete={tarjetaDelete}
+                                setUsuarioEditado={setUsuarioEditado} />)
                     }
                 </div>
                 <div className='col'>
                     <h1>Formulario</h1>
-                    <FormularioComponent usuarioAdd={usuarioAdd}/>
+                    {/* Aqui se le agrega a FormularioComponent el usuarioAdd que es el que tiene la informacion de los nuevos ingresos de usuarios */}
+                    <FormularioComponent
+                        usuarioAdd={usuarioAdd}
+                        usuarioEditado={usuarioEditado} 
+                        usuarioEdit={usuarioEdit}
+                        setUsuarioEditado={setUsuarioEditado}/>
                 </div>
             </div>
         </div>);

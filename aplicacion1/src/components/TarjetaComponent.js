@@ -1,7 +1,7 @@
 import React from "react";
 // import UsuarioComponent from "./UsuarioComponent";
 
-const TarjetaComponent = ({ usuario, tarjetaDelete }) => {
+const TarjetaComponent = ({ usuario, tarjetaDelete, setUsuarioEditado }) => {
     return (
         <div className='card'>
             <div className='card-body'>
@@ -9,8 +9,10 @@ const TarjetaComponent = ({ usuario, tarjetaDelete }) => {
                 <p>Edad: {usuario.edad}</p>
                 <hr />
                 <div className='d-flex justify-content-end'>
-                    <button className='btn btn-sm btn-outline-primary me-2'>Editar</button>
-                    <button className='btn btn-sm btn-outline-danger' onClick={() => tarjetaDelete(usuario.key)}>Eliminar</button>
+                    <button className='btn btn-sm btn-outline-primary me-2' onClick={() => setUsuarioEditado(usuario)}>Editar</button>
+                    <button className='btn btn-sm btn-outline-danger'
+                    //Con este onClick le damos funcionalidad al boton eliminar
+                    onClick={() => tarjetaDelete(usuario.key)}>Eliminar</button>
                 </div>
             </div>
         </div>)
