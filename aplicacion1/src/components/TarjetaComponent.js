@@ -18,4 +18,22 @@ const TarjetaComponent = ({ usuario, tarjetaDelete, setUsuarioEditado }) => {
         </div>)
 }
 
-export default TarjetaComponent;
+const TarjetaAuto = ({ auto, tarjetaDelete, setAutoEditado }) => {
+    return (
+        <div className='card'>
+            <div className='card-body'>
+                <h3 className='card-tittle'>{auto.marca} {auto.modelo}</h3>
+                <p>Color: {auto.color}</p>
+                <p>Patente: {auto.patente}</p>
+                <hr />
+                <div className='d-flex justify-content-end'>
+                    <button className='btn btn-sm btn-outline-primary me-2' onClick={() => setAutoEditado(auto)}>Editar</button>
+                    <button className='btn btn-sm btn-outline-danger'
+                    //Con este onClick le damos funcionalidad al boton eliminar
+                    onClick={() => tarjetaDelete(auto.id)}>Eliminar</button>
+                </div>
+            </div>
+        </div>)
+}
+
+export {TarjetaComponent, TarjetaAuto};

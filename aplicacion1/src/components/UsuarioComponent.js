@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import FormularioComponent from "./FormularioComponent";
-import TarjetaComponent from "./TarjetaComponent";
+import React, { useState, useCallback } from "react";
+import { FormularioComponent } from "./FormularioComponent";
+import { TarjetaComponent } from "./TarjetaComponent";
+import {useNavigate} from "react-router-dom";
 
 /*const usuario1 ={
     nombre: 'Joseph',
@@ -47,6 +48,10 @@ const UsuarioComponent = () => {
 
     const [usuarioEditado, setUsuarioEditado] = useState(null);
 
+    const navigate = useNavigate();
+
+    const handleOnClick = useCallback( () => navigate('/autos', {replace:true}, [navigate]));
+
     //Aqui se crea la funcion para el button eliminar y se le asigan la key(id) para saber cual eliminar
     const tarjetaDelete = (usuarioKey) => {
         //Aqui se crea la funcion para filtrar la key del usuario ingresado para determinar cual se tiene que elimina
@@ -90,9 +95,13 @@ const UsuarioComponent = () => {
                     {/* Aqui se le agrega a FormularioComponent el usuarioAdd que es el que tiene la informacion de los nuevos ingresos de usuarios */}
                     <FormularioComponent
                         usuarioAdd={usuarioAdd}
-                        usuarioEditado={usuarioEditado} 
+                        usuarioEditado={usuarioEditado}
                         usuarioEdit={usuarioEdit}
-                        setUsuarioEditado={setUsuarioEditado}/>
+                        setUsuarioEditado={setUsuarioEditado} />
+                </div>
+                <br />
+                <div>
+                    <button type="buttom" className="btn btn-outline-primary me-2" onClick={handleOnClick}>Ir a Autos</button>
                 </div>
             </div>
         </div>);
